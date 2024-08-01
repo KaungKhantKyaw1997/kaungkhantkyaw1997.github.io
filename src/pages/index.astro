@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MenuBar from "./MenuBar.astro";
+import CardGrid from "../components/CardGrid.astro";
+import { cardData } from "../data/CardData.js";
+import LinkGrid from "../components/LinkGrid.astro";
+import { certificateData } from "../data/CertificateData.js";
+import CategoryGrid from "../components/CategoryGrid.astro";
+import { skillData } from "../data/SkillData.js";
+---
+
+<Layout title="Kaung Khant Kyaw">
+  <MenuBar />
+  <main>
+    <div id="about" class="header">
+      <div>
+        <span class="text-gradient">Kaung Khant Kyaw</span>
+        <h1>Software Developer</h1>
+        <span
+          >Over <span class="important-text">Four Years</span> of Experience
+        </span>
+      </div>
+      <div class="icon-grid">
+        <a href="mailto:kaungkhant19297@gmail.com" target="_blank">
+          <img src="/icons/gmail.svg" alt="Gmail" class="icon" />
+        </a>
+        <a href="https://wa.me/+959782227894" target="_blank">
+          <img src="/icons/whatsapp.svg" alt="WhatsApp" class="icon" />
+        </a>
+        <a href="https://github.com/KaungKhantKyaw1997" target="_blank">
+          <img src="/icons/github.svg" alt="GitHub" class="icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/kaung-khant-kyaw-3101a8252"
+          target="_blank"
+        >
+          <img src="/icons/linkedin.svg" alt="LinkedIn" class="icon" />
+        </a>
+      </div>
+    </div>
+    <p class="intro">
+      I specialize in creating visually appealing and user-friendly <span
+        class="important-text">websites and mobile apps.</span
+      >
+    </p>
+    <p class="intro">
+      Known for understanding client needs and delivering on time, I thrive on
+      collaboration and continuous learning.
+    </p>
+    <p class="important-text">
+      ‟ I completed a B.C.Sc at the University of Computer Studies, Yangon, from
+      October 2019 to March 2024. ”
+    </p>
+    <CategoryGrid datalist={skillData} />
+    <h2 id="work">Work</h2>
+    <CardGrid datalist={cardData} />
+    <h2 id="certifications">Certifications</h2>
+    <LinkGrid datalist={certificateData} />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: var(--secondary-black);
+    border-radius: 1rem;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon:hover {
+    animation: bounce 0.5s;
+  }
+
+  .intro {
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ed {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ed-text {
+    text-align: end;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+</style>

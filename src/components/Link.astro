@@ -1,0 +1,29 @@
+---
+const { href, title, iconSrc, iconAlt } = Astro.props;
+---
+
+<a href={href} target="_blank">
+  <span>{title}</span>
+  <img src={iconSrc} alt={iconAlt} />
+</a>
+
+<style>
+  a {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid var(--secondary-black);
+    padding: 10px;
+  }
+
+  a span {
+    display: block;
+    word-break: break-word;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    padding-left: 0.5rem;
+  }
+</style>

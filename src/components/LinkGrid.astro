@@ -1,0 +1,28 @@
+---
+import Link from "./Link.astro";
+
+const { datalist } = Astro.props;
+---
+
+<div class="link-grid">
+  {
+    datalist.map((data: any) => (
+      <Link
+        href={data.href}
+        title={data.title}
+        iconSrc={data.iconSrc}
+        iconAlt={data.iconAlt}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .link-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+</style>

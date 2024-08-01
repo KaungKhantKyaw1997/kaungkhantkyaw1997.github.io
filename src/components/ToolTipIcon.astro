@@ -1,0 +1,49 @@
+---
+const { src, alt, tooltip } = Astro.props;
+---
+
+<div class="tooltip">
+  <img src={src} alt={alt} />
+  <span class="tooltip-text">{tooltip}</span>
+</div>
+
+<style>
+  .tooltip {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    border-radius: 1rem;
+    background: var(--secondary-black);
+    padding: 10px;
+    margin: 0.5rem;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 80px;
+    font-size: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: var(--secondary-black);
+    border-radius: 0.5rem;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 40%;
+    margin-left: -40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>

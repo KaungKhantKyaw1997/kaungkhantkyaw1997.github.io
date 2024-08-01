@@ -1,0 +1,40 @@
+---
+const { href, iconSrc, iconAlt } = Astro.props;
+---
+
+<a href={href} target="_blank">
+  <img src={iconSrc} alt={iconAlt} />
+</a>
+
+<style>
+  img {
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-black);
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  img:hover {
+    animation: bounce 0.5s;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+</style>

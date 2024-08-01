@@ -1,0 +1,112 @@
+---
+const menuItems = [
+  { label: "About", target: "about", icon: "/icons/about.svg" },
+  { label: "Work", target: "work", icon: "/icons/work.svg" },
+  {
+    label: "Certifications",
+    target: "certifications",
+    icon: "/icons/certificate.svg",
+  },
+];
+---
+
+<style>
+  .menu-bar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    z-index: 1000;
+  }
+
+  .menu-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+    border-radius: 1rem;
+  }
+
+  .menu-item.active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-item img {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-item span {
+      display: none;
+    }
+
+    .menu-item img {
+      display: block;
+      width: 24px; /* Adjust size as needed */
+      height: 24px; /* Adjust size as needed */
+    }
+  }
+</style>
+
+<div class="menu-bar">
+  {
+    menuItems.map((item) => (
+      <div class="menu-item" data-target={item.target}>
+        <img src={item.icon} alt={item.label} />
+        <span>{item.label}</span>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  function getMenuBarHeight(): number {
+    const menuBar = document.querySelector(".menu-bar") as HTMLElement | null;
+    return menuBar ? menuBar.offsetHeight : 0;
+  }
+
+  const menuItems = document.querySelectorAll(
+    ".menu-item"
+  ) as NodeListOf<HTMLElement>;
+  const menuBarHeight = getMenuBarHeight();
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const targetId = item.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId || "");
+      if (targetElement) {
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - menuBarHeight - 30;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        menuItems.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+      }
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    menuItems.forEach((item) => item.classList.remove("active"));
+  });
+</script>

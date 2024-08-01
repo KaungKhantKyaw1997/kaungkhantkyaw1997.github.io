@@ -1,0 +1,38 @@
+---
+import Card from "./Card.astro";
+import Icon from "./Icon.astro";
+
+const { datalist } = Astro.props;
+---
+
+<div class="card-grid">
+  {
+    datalist.map((data: any) => (
+      <Card imageSrc={data.imageSrc} imageAlt={data.imageAlt} desc={data.desc}>
+        {data.links.map((link: any) => (
+          <Icon
+            href={link.href}
+            iconSrc={link.iconSrc}
+            iconAlt={link.iconAlt}
+          />
+        ))}
+      </Card>
+    ))
+  }
+</div>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

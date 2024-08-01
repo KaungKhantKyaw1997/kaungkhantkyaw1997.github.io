@@ -1,0 +1,31 @@
+---
+const { src, alt } = Astro.props;
+---
+
+<div class="image-grid">
+  <img src={src} alt={alt} />
+  <div class="image-container">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .image-grid {
+    display: grid;
+  }
+
+  img {
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    background: var(--primary-black);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
+</style>

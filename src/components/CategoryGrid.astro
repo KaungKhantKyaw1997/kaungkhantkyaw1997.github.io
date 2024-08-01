@@ -1,0 +1,28 @@
+---
+import Category from "../components/Category.astro";
+
+const { datalist } = Astro.props;
+---
+
+<div class="icon-grid">
+  {
+    datalist.map((data: any) => (
+      <Category header={data.header} skills={data.skills} />
+    ))
+  }
+</div>
+
+<style>
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .icon-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

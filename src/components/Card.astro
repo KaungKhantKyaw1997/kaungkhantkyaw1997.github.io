@@ -1,0 +1,20 @@
+---
+import Image from "./Image.astro";
+
+const { imageSrc, imageAlt, desc } = Astro.props;
+---
+
+<div class="card">
+  <Image src={imageSrc} alt={imageAlt}>
+    <slot />
+  </Image>
+  <p>{desc}</p>
+</div>
+
+<style>
+  .card {
+    border-radius: 1rem;
+    background: var(--secondary-black);
+    padding: 10px;
+  }
+</style>

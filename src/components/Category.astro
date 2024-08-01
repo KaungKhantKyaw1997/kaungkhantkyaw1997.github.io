@@ -1,0 +1,30 @@
+---
+import ToolTipIcon from "./ToolTipIcon.astro";
+
+const { header, skills } = Astro.props;
+---
+
+<div>
+  <h3 class="header">{header}</h3>
+  <div class="body">
+    {
+      skills.map((skill: any) => (
+        <ToolTipIcon src={skill.src} alt={skill.alt} tooltip={skill.tooltip} />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+</style>
