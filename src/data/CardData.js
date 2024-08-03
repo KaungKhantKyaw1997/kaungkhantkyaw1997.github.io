@@ -39,6 +39,23 @@ export const cardData = [
     ],
   },
   {
+    imageSrc: "/images/ndb.png",
+    imageAlt: "NDB",
+    desc: "Created an app for viewing account information, checking transactions, performing transfers, sending money, transferring to external banks, facilitating mobile top-ups, and paying Skynet and water bills.",
+    links: [
+      {
+        href: "https://play.google.com/store/apps/details?id=com.ndb.ndbplus",
+        iconSrc: "/icons/playstore.svg",
+        iconAlt: "Play Store",
+      },
+      {
+        href: "https://apps.apple.com/us/app/ndb-mbanking/id6448618963",
+        iconSrc: "/icons/appstore.svg",
+        iconAlt: "App Store",
+      },
+    ],
+  },
+  {
     imageSrc: "/images/watchvault.png",
     imageAlt: "Watch Vault",
     desc: "Oversaw the development of a watch ordering platform with a seamless journey from product selection to checkout. Integrated real-time tracking and provided access to order history.",
