@@ -1,4 +1,4 @@
-export const cardData = [
+export const workData = [
   {
     imageSrc: "/images/ydnb.png",
     imageAlt: "YDNB",

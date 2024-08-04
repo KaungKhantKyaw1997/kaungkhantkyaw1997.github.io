@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import MenuBar from "../components/MenuBar.astro";
 import CardGrid from "../components/CardGrid.astro";
-import { cardData } from "../data/CardData.js";
+import { workData } from "../data/WorkData.js";
+import { projectData } from "../data/ProjectData.js";
 import LinkGrid from "../components/LinkGrid.astro";
 import { certificateData } from "../data/CertificateData.js";
 import CategoryGrid from "../components/CategoryGrid.astro";
@@ -12,7 +13,7 @@ import { skillData } from "../data/SkillData.js";
 <Layout title="Kaung Khant Kyaw">
   <MenuBar />
   <main>
-    <div id="about" class="header">
+    <div id="home" class="header">
       <div>
         <span class="text-gradient">Kaung Khant Kyaw</span>
         <h1>Software Developer</h1>
@@ -52,8 +53,10 @@ import { skillData } from "../data/SkillData.js";
       October 2019 to March 2024. ”
     </p>
     <CategoryGrid datalist={skillData} />
-    <h2 id="work">Work</h2>
-    <CardGrid datalist={cardData} />
+    <h2 id="experience">Experience</h2>
+    <CardGrid datalist={workData} />
+    <h2 id="projects">Projects</h2>
+    <CardGrid datalist={projectData} />
     <h2 id="certifications">Certifications</h2>
     <LinkGrid datalist={certificateData} />
   </main>
