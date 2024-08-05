@@ -1,14 +1,18 @@
 export const skillData = [
   {
-    header: "Frontend Frameworks and Libraries",
+    header: "Frontend Frameworks",
     skills: [
       { src: "/skills/angular.svg", alt: "Angular", tooltip: "Angular" },
-      { src: "/skills/react.svg", alt: "React", tooltip: "React" },
       { src: "/skills/vue.svg", alt: "Vue.js", tooltip: "Vue.js" },
+      { src: "/skills/nextjs.svg", alt: "Next.js", tooltip: "Next.js" },
       { src: "/skills/astro.svg", alt: "Astro", tooltip: "Astro" },
       { src: "/skills/flutter.svg", alt: "Flutter", tooltip: "Flutter" },
       { src: "/skills/ionic.svg", alt: "Ionic", tooltip: "Ionic" },
-      { src: "/skills/socketio.svg", alt: "Socket.IO", tooltip: "Socket.IO" },
+      {
+        src: "/skills/react.svg",
+        alt: "React Native",
+        tooltip: "React Native",
+      },
     ],
   },
   {
@@ -39,7 +43,11 @@ export const skillData = [
       { src: "/skills/github.svg", alt: "GitHub", tooltip: "GitHub" },
       { src: "/skills/docker.svg", alt: "Docker", tooltip: "Docker" },
       { src: "/skills/firebase.svg", alt: "Firebase", tooltip: "Firebase" },
-      { src: "/skills/azure.svg", alt: "Azure", tooltip: "Azure" },
+      {
+        src: "/skills/azure.svg",
+        alt: "Microsoft Azure",
+        tooltip: "Microsoft Azure",
+      },
     ],
   },
 ];
