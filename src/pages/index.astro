@@ -8,6 +8,9 @@ import LinkGrid from "../components/LinkGrid.astro";
 import { certificateData } from "../data/CertificateData.js";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import { skillData } from "../data/SkillData.js";
+import { npmPackageData } from "../data/NPMPackageData.js";
+import { dartPackageData } from "../data/DartPackageData.js";
+import ImageCardGrid from "../components/ImageCardGrid.astro";
 ---
 
 <Layout title="Kaung Khant Kyaw">
@@ -57,6 +60,16 @@ import { skillData } from "../data/SkillData.js";
     <CardGrid datalist={workData} />
     <h2 id="projects">Projects</h2>
     <CardGrid datalist={projectData} />
+    <h2 id="packages" class="packages-header">
+      Packages
+      <a href="https://www.npmjs.com/~kaung_khant" target="_blank">
+        <img src="/icons/npm.svg" alt="NPM" class="package-icon" />
+      </a>
+    </h2>
+    <h3>NPM</h3>
+    <ImageCardGrid datalist={npmPackageData} />
+    <h3>Dart</h3>
+    <ImageCardGrid datalist={dartPackageData} />
     <h2 id="certifications">Certifications</h2>
     <LinkGrid datalist={certificateData} />
   </main>
@@ -93,6 +106,25 @@ import { skillData } from "../data/SkillData.js";
   }
 
   .icon:hover {
+    animation: bounce 0.5s;
+  }
+
+  .packages-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .package-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: var(--secondary-black);
+    border-radius: 1rem;
+    padding: 10px;
+  }
+
+  .package-icon:hover {
     animation: bounce 0.5s;
   }
 
