@@ -11,4 +11,16 @@ export const projectData = [
       },
     ],
   },
+  {
+    imageSrc: "/images/facerecognition.png",
+    imageAlt: "Way Finder",
+    desc: "Implemented for identifying characters in images, falling under Computer Vision.",
+    links: [
+      {
+        href: "https://github.com/KaungKhantKyaw1997/face_recognition",
+        iconSrc: "/icons/github.svg",
+        iconAlt: "GitHub",
+      },
+    ],
+  },
 ];
