@@ -10,7 +10,7 @@ export const workData = [
         iconAlt: "Play Store",
       },
       {
-        href: "https://apps.apple.com/us/app/ydnb-mbanking/id6449997906",
+        href: "https://apps.apple.com/us/app/ydnb-mbanking/id6608976031",
         iconSrc: "/icons/appstore.svg",
         iconAlt: "App Store",
       },
