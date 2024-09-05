@@ -5,7 +5,7 @@ export const workData = [
     desc: "Created an app for viewing account information, checking transactions, and performing transfers. It also supports sending money, transferring to external banks, and topping up wallets.",
     links: [
       {
-        href: "https://play.google.com/store/apps/details?id=com.ydnb.app001",
+        href: "https://play.google.com/store/apps/details?id=com.ydnb.mbanking",
         iconSrc: "/icons/playstore.svg",
         iconAlt: "Play Store",
       },
