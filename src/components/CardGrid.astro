@@ -2,12 +2,16 @@
 import Card from "./Card.astro";
 import Icon from "./Icon.astro";
 
-const { datalist } = Astro.props;
+const { datalist, showFav = false } = Astro.props;
+
+const filteredData = showFav
+  ? datalist.filter((data: any) => data.fav)
+  : datalist;
 ---
 
 <div class="card-grid">
   {
-    datalist.map((data: any) => (
+    filteredData.map((data: any) => (
       <Card imageSrc={data.imageSrc} imageAlt={data.imageAlt} desc={data.desc}>
         {data.links.map((link: any) => (
           <Icon

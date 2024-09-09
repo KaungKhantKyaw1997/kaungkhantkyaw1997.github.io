@@ -23,6 +23,9 @@ const { title } = Astro.props;
   <body>
     <slot />
   </body>
+  <footer>
+    <p>Copyright © 2024. All rights reserved.</p>
+  </footer>
 </html>
 <style is:global>
   :root {
@@ -37,6 +40,11 @@ const { title } = Astro.props;
 
     --primary-black: #13151a;
     --secondary-black: #23262d;
+  }
+
+  footer p {
+    text-align: center;
+    margin-bottom: 5rem;
   }
 
   html {
@@ -82,6 +90,7 @@ const { title } = Astro.props;
     line-height: 1.5;
     color: #a6a6a6;
   }
+
   span {
     font-size: 0.8rem;
     font-weight: 400;

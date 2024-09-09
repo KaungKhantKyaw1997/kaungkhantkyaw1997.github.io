@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardGrid from "../components/CardGrid.astro";
+import { workData } from "../data/WorkData.js";
+---
+
+<Layout title="Kaung Khant Kyaw">
+  <main>
+    <h2 class="icon-header">
+      Experience
+      <a href="/">
+        <img src="/icons/back.svg" alt="Back" />
+      </a>
+    </h2>
+    <CardGrid datalist={workData} />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+  }
+
+  .icon-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .icon-header img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: var(--secondary-black);
+    border-radius: 1rem;
+    padding: 10px;
+  }
+
+  .icon-header img:hover {
+    animation: bounce 0.5s;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+</style>

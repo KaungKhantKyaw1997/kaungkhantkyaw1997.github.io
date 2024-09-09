@@ -3,6 +3,7 @@ export const workData = [
     imageSrc: "/images/ydnb.png",
     imageAlt: "YDNB",
     desc: "Created an app for viewing account information, checking transactions, and performing transfers. It also supports sending money, transferring to external banks, and topping up wallets.",
+    fav: false,
     links: [
       {
         href: "https://play.google.com/store/apps/details?id=com.ydnb.mbanking",
@@ -20,6 +21,7 @@ export const workData = [
     imageSrc: "/images/tcb.png",
     imageAlt: "TCB",
     desc: "Created an app for viewing account information, checking transactions, performing transfers, sending money, transferring to external banks, and facilitating mobile top-ups and electricity bill payments.",
+    fav: false,
     links: [
       {
         href: "https://play.google.com/store/apps/details?id=com.tcb.app001",
@@ -42,6 +44,7 @@ export const workData = [
     imageSrc: "/images/ndb.png",
     imageAlt: "NDB",
     desc: "Created an app for viewing account information, checking transactions, performing transfers, sending money, transferring to external banks, facilitating mobile top-ups, and paying Skynet and water bills.",
+    fav: true,
     links: [
       {
         href: "https://play.google.com/store/apps/details?id=com.ndb.ndbplus",
@@ -59,6 +62,7 @@ export const workData = [
     imageSrc: "/images/watchvault.png",
     imageAlt: "Watch Vault",
     desc: "Oversaw the development of a watch ordering platform with a seamless journey from product selection to checkout. Integrated real-time tracking and provided access to order history.",
+    fav: true,
     links: [
       {
         href: "https://play.google.com/store/apps/details?id=com.watchvault.app001",

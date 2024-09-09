@@ -56,14 +56,24 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
       October 2019 to March 2024. ”
     </p>
     <CategoryGrid datalist={skillData} />
-    <h2 id="experience">Experience</h2>
-    <CardGrid datalist={workData} />
-    <h2 id="projects">Projects</h2>
-    <CardGrid datalist={projectData} />
-    <h2 id="packages" class="packages-header">
+    <h2 id="experience" class="icon-header">
+      Experience
+      <a href="/experience">
+        <img src="/icons/more.svg" alt="More" />
+      </a>
+    </h2>
+    <CardGrid datalist={workData} showFav={true} />
+    <h2 id="projects" class="icon-header">
+      Projects
+      <a href="/projects">
+        <img src="/icons/more.svg" alt="More" />
+      </a>
+    </h2>
+    <CardGrid datalist={projectData} showFav={true} />
+    <h2 id="packages" class="icon-header">
       NPM
       <a href="https://www.npmjs.com/~kaung_khant" target="_blank">
-        <img src="/icons/npm.svg" alt="NPM" class="package-icon" />
+        <img src="/icons/npm.svg" alt="NPM" />
       </a>
     </h2>
     <ImageCardGrid datalist={npmPackageData} />
@@ -108,13 +118,13 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
     animation: bounce 0.5s;
   }
 
-  .packages-header {
+  .icon-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .package-icon {
+  .icon-header img {
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -123,7 +133,7 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
     padding: 10px;
   }
 
-  .package-icon:hover {
+  .icon-header img:hover {
     animation: bounce 0.5s;
   }
 
