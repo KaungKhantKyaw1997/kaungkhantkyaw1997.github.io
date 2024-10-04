@@ -1,7 +1,7 @@
 ---
 import Image from "./Image.astro";
 
-const { imageSrc, imageAlt, desc } = Astro.props;
+const { imageSrc, imageAlt, employer, desc } = Astro.props;
 ---
 
 <div class="card">
@@ -9,12 +9,23 @@ const { imageSrc, imageAlt, desc } = Astro.props;
     <slot />
   </Image>
   <p>{desc}</p>
+  {employer && <span class="text-end">@{employer}</span>}
 </div>
 
 <style>
   .card {
     border-radius: 1rem;
     background: var(--secondary-black);
-    padding: 10px 10px 0 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-end {
+    display: block;
+    text-align: end;
+    margin-top: auto;
+    font-style: italic;
+    color: #ffffff;
   }
 </style>

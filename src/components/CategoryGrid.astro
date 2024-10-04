@@ -6,8 +6,16 @@ const { datalist } = Astro.props;
 
 <div class="icon-grid">
   {
-    datalist.map((data: any) => (
-      <Category header={data.header} skills={data.skills} />
+    datalist.map((data: any, index: number) => (
+      <div
+        class={
+          datalist.length % 2 !== 0 && index === datalist.length - 1
+            ? "centered"
+            : ""
+        }
+      >
+        <Category header={data.header} skills={data.skills} />
+      </div>
     ))
   }
 </div>
@@ -20,9 +28,20 @@ const { datalist } = Astro.props;
     margin-bottom: 2rem;
   }
 
+  .centered {
+    display: flex;
+    justify-content: center;
+    grid-column: span 2;
+  }
+
   @media (max-width: 600px) {
     .icon-grid {
       grid-template-columns: 1fr;
+    }
+
+    .centered {
+      justify-content: center;
+      grid-column: auto;
     }
   }
 </style>

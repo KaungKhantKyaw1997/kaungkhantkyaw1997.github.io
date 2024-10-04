@@ -12,7 +12,12 @@ const filteredData = showFav
 <div class="card-grid">
   {
     filteredData.map((data: any) => (
-      <Card imageSrc={data.imageSrc} imageAlt={data.imageAlt} desc={data.desc}>
+      <Card
+        imageSrc={data.imageSrc}
+        imageAlt={data.imageAlt}
+        desc={data.desc}
+        employer={data.employer}
+      >
         {data.links.map((link: any) => (
           <Icon
             href={link.href}

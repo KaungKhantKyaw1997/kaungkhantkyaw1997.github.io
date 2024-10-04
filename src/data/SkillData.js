@@ -3,9 +3,9 @@ export const skillData = [
     header: "Frontend Frameworks",
     skills: [
       { src: "/skills/angular.svg", alt: "Angular", tooltip: "Angular" },
-      { src: "/skills/vue.svg", alt: "Vue.js", tooltip: "Vue.js" },
       { src: "/skills/nextjs.svg", alt: "Next.js", tooltip: "Next.js" },
       { src: "/skills/astro.svg", alt: "Astro", tooltip: "Astro" },
+      { src: "/skills/vue.svg", alt: "Vue.js", tooltip: "Vue.js" },
       { src: "/skills/flutter.svg", alt: "Flutter", tooltip: "Flutter" },
       { src: "/skills/ionic.svg", alt: "Ionic", tooltip: "Ionic" },
       {
@@ -16,12 +16,23 @@ export const skillData = [
     ],
   },
   {
+    header: "CSS Frameworks",
+    skills: [
+      {
+        src: "/skills/tailwind.svg",
+        alt: "Tailwind CSS",
+        tooltip: "Tailwind CSS",
+      },
+      { src: "/skills/bootstrap.svg", alt: "Bootstrap", tooltip: "Bootstrap" },
+    ],
+  },
+  {
     header: "Backend Frameworks",
     skills: [
       { src: "/skills/java.svg", alt: "Java", tooltip: "Java" },
       { src: "/skills/nodejs.svg", alt: "Node.js", tooltip: "Node.js" },
       { src: "/skills/python.svg", alt: "Python", tooltip: "Python" },
-      { src: "/skills/go.svg", alt: "Go", tooltip: "Go" },
+      // { src: "/skills/go.svg", alt: "Go", tooltip: "Go" },
     ],
   },
   {
