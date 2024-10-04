@@ -18,12 +18,12 @@ export const skillData = [
   {
     header: "CSS Frameworks",
     skills: [
+      { src: "/skills/bootstrap.svg", alt: "Bootstrap", tooltip: "Bootstrap" },
       {
         src: "/skills/tailwind.svg",
         alt: "Tailwind CSS",
         tooltip: "Tailwind CSS",
       },
-      { src: "/skills/bootstrap.svg", alt: "Bootstrap", tooltip: "Bootstrap" },
     ],
   },
   {
