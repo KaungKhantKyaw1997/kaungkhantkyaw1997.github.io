@@ -18,7 +18,9 @@ I am a Software Developer with over **Four Years of Experience** in creating use
 
 ## 📬 Connect with Me
 
-- [Email](mailto:kaungkhant19297@gmail.com)
+- [Gmail](mailto:kaungkhant19297@gmail.com)
+- [LinkedIn](https://linkedin.com/in/kaungkhantkyaw-feb97)
 - [GitHub](https://github.com/KaungKhantKyaw1997)
-- [LinkedIn](https://www.linkedin.com/in/kaung-khant-kyaw-3101a8252)
+- [HackerRank](https://hackerrank.com/kaungkhant19297)
 - [WhatsApp](https://wa.me/+959782227894)
+- [LINE](https://line.me/ti/p/~kaungkhant19297)

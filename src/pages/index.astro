@@ -24,23 +24,6 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
           >Over <span class="important-text">Four Years</span> of Experience
         </span>
       </div>
-      <div class="icon-grid">
-        <a href="mailto:kaungkhant19297@gmail.com" target="_blank">
-          <img src="/icons/gmail.svg" alt="Gmail" class="icon" />
-        </a>
-        <a href="https://wa.me/+959782227894" target="_blank">
-          <img src="/icons/whatsapp.svg" alt="WhatsApp" class="icon" />
-        </a>
-        <a href="https://github.com/KaungKhantKyaw1997" target="_blank">
-          <img src="/icons/github.svg" alt="GitHub" class="icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/kaung-khant-kyaw-3101a8252"
-          target="_blank"
-        >
-          <img src="/icons/linkedin.svg" alt="LinkedIn" class="icon" />
-        </a>
-      </div>
     </div>
     <p class="intro">
       I specialize in creating visually appealing and user-friendly <span
@@ -63,24 +46,51 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
       </a>
     </h2>
     <CardGrid datalist={workData} showFav={true} />
-    <h2 id="projects" class="icon-header">
+    <h2 id="resources" class="icon-header">
       Projects
       <a href="/projects">
         <img src="/icons/more.svg" alt="More" />
       </a>
     </h2>
     <CardGrid datalist={projectData} showFav={true} />
-    <h2 id="packages" class="icon-header">
-      NPM
+    <h2 class="icon-header">
+      NPM Packages
       <a href="https://www.npmjs.com/~kaung_khant" target="_blank">
         <img src="/icons/npm.svg" alt="NPM" />
       </a>
     </h2>
     <ImageCardGrid datalist={npmPackageData} />
-    <h2>Dart</h2>
+    <h2>Dart Packages</h2>
     <ImageCardGrid datalist={dartPackageData} />
     <h2 id="certifications">Certifications</h2>
     <LinkGrid datalist={certificateData} />
+    <hr />
+    <div id="contact" class="icon-grid">
+      <a href="mailto:kaungkhant19297@gmail.com" target="_blank">
+        <p class="important-text">Gmail</p>
+        <img src="/icons/gmail.svg" alt="Gmail" class="icon" />
+      </a>
+      <a href="https://linkedin.com/in/kaungkhantkyaw-feb97" target="_blank">
+        <p class="important-text">LinkedIn</p>
+        <img src="/icons/linkedin.svg" alt="LinkedIn" class="icon" />
+      </a>
+      <a href="https://github.com/KaungKhantKyaw1997" target="_blank">
+        <p class="important-text">GitHub</p>
+        <img src="/icons/github.svg" alt="GitHub" class="icon" />
+      </a>
+      <a href="https://hackerrank.com/kaungkhant19297" target="_blank">
+        <p class="important-text">HackerRank</p>
+        <img src="/icons/hackerrank.svg" alt="HackerRank" class="icon" />
+      </a>
+      <a href="https://wa.me/+959782227894" target="_blank">
+        <p class="important-text">WhatsApp</p>
+        <img src="/icons/whatsapp.svg" alt="WhatsApp" class="icon" />
+      </a>
+      <a href="https://line.me/ti/p/~kaungkhant19297" target="_blank">
+        <p class="important-text">LINE</p>
+        <img src="/icons/line.svg" alt="LINE" class="icon" />
+      </a>
+    </div>
   </main>
 </Layout>
 
@@ -96,11 +106,14 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
     display: flex;
     justify-content: space-between;
     margin-top: 4rem;
+    margin-bottom: 1rem;
   }
 
   .icon-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .icon {
@@ -110,7 +123,6 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
     background: var(--secondary-black);
     border-radius: 1rem;
     padding: 10px;
-    margin-left: 1rem;
     margin-bottom: 1rem;
   }
 
@@ -153,6 +165,19 @@ import ImageCardGrid from "../components/ImageCardGrid.astro";
 
   .ed-text {
     text-align: end;
+  }
+
+  @media (max-width: 600px) {
+    .icon-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  hr {
+    max-width: 30rem;
+    border-width: 0.1px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   @keyframes bounce {
