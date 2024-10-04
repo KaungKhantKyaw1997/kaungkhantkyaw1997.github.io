@@ -18,7 +18,7 @@ I am a Software Developer with over **Four Years of Experience** in creating use
 
 ## 📬 Connect with Me
 
-- ![Email](https://img.icons8.com/ios-filled/20/000000/mail.png) [Email](mailto:kaungkhant19297@gmail.com)
-- ![GitHub](https://img.icons8.com/ios-filled/20/000000/github.png) [GitHub](https://github.com/KaungKhantKyaw1997)
-- ![LinkedIn](https://img.icons8.com/ios-filled/20/000000/linkedin.png) [LinkedIn](https://www.linkedin.com/in/kaung-khant-kyaw-3101a8252)
-- ![WhatsApp](https://img.icons8.com/ios-filled/20/000000/whatsapp.png) [WhatsApp](https://wa.me/+959782227894)
+- [Email](mailto:kaungkhant19297@gmail.com)
+- [GitHub](https://github.com/KaungKhantKyaw1997)
+- [LinkedIn](https://www.linkedin.com/in/kaung-khant-kyaw-3101a8252)
+- [WhatsApp](https://wa.me/+959782227894)
