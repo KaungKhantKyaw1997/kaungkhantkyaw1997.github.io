@@ -3,7 +3,7 @@ export const projectData = [
     imageSrc: "/images/wayfinder.png",
     imageAlt: "Way Finder",
     desc: "A user-friendly location app to discover current positions, search for places, calculate distances, and navigate seamlessly with maps.",
-    fav: true,
+    fav: false,
     links: [
       {
         href: "https://github.com/KaungKhantKyaw1997/way_finder",
@@ -36,6 +36,11 @@ export const projectData = [
         iconSrc: "/icons/github.svg",
         iconAlt: "GitHub",
       },
+      {
+        href: "https://nihongo-x.onrender.com/api-docs",
+        iconSrc: "/icons/swagger.svg",
+        iconAlt: "Swagger",
+      },
     ],
   },
   {
@@ -51,6 +56,42 @@ export const projectData = [
       },
       {
         href: "https://nihongo-quest.netlify.app",
+        iconSrc: "/icons/web.svg",
+        iconAlt: "Web",
+      },
+    ],
+  },
+  {
+    imageSrc: "/images/quiztrove.png",
+    imageAlt: "Quiz Trove",
+    desc: "Quiz Trove is an online platform for creating and managing quizzes, allowing users to test their knowledge and track progress.",
+    fav: false,
+    links: [
+      {
+        href: "https://github.com/KaungKhantKyaw1997/quiz-trove",
+        iconSrc: "/icons/github.svg",
+        iconAlt: "GitHub",
+      },
+      {
+        href: "https://quiz-trove.onrender.com/api-docs",
+        iconSrc: "/icons/swagger.svg",
+        iconAlt: "Swagger",
+      },
+    ],
+  },
+  {
+    imageSrc: "/images/itquizz.png",
+    imageAlt: "IT Quizz",
+    desc: "A fun and interactive quiz application to test your knowledge of various programming topics.",
+    fav: true,
+    links: [
+      {
+        href: "https://github.com/KaungKhantKyaw1997/it-quizz",
+        iconSrc: "/icons/github.svg",
+        iconAlt: "GitHub",
+      },
+      {
+        href: "https://it-quizz.netlify.app",
         iconSrc: "/icons/web.svg",
         iconAlt: "Web",
       },
