@@ -37,7 +37,7 @@ export default function Skills() {
   const professionalSkills = ["Communication", "Problem Solving", "Leadership"];
 
   return (
-    <section id="skills" className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+    <section id="skills" className="max-w-6xl mx-auto px-4 sm:px-6 pb-16 relative">
       <Reveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-mustard flex items-center justify-center text-forest-900 shadow">
