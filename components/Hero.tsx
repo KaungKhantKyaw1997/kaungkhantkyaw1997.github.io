@@ -9,13 +9,13 @@ export default function Hero() {
     >
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         {/* Left Text Area */}
-        <Reveal className="lg:col-span-7 space-y-6 z-10">
+        <Reveal className="lg:col-span-7 space-y-6 z-10 w-full min-w-0">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-900/5 border border-forest-900/10 text-xs font-bold tracking-wide uppercase text-forest-900">
             <span className="w-2 h-2 rounded-full bg-mustard animate-ping"></span>
             <span>Software Developer • 6+ Years Exp</span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-forest-900">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-forest-900">
             Software <br />
             Developer <br />
             <span className="text-mustard underline decoration-forest-900/20 decoration-wavy">
@@ -28,11 +28,11 @@ export default function Hero() {
             Scalable Systems & Mobile Apps
           </p>
 
-          <div className="mt-6 p-6 rounded-2xl bg-white/80 backdrop-blur border border-forest-900/10 shadow-sm space-y-4">
+          <div className="mt-6 p-4 sm:p-6 rounded-2xl bg-white/80 backdrop-blur border border-forest-900/10 shadow-sm space-y-4 w-full box-border">
             <div className="inline-block px-4 py-1 rounded-full bg-forest-900 text-white text-xs font-bold tracking-wider uppercase">
               About Me
             </div>
-            <p className="text-sm text-slate-700 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed break-words">
               Hello! I&apos;m{" "}
               <strong className="text-forest-900">Kaung Khant Kyaw</strong>, a
               passionate Software Developer with over 6 years of experience. I
@@ -42,15 +42,15 @@ export default function Hero() {
               learning.
             </p>
 
-            <div className="pt-3 border-t border-forest-900/10 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-mustard/20 text-forest-900 flex items-center justify-center font-bold text-xs">
+            <div className="pt-3 border-t border-forest-900/10 flex items-start sm:items-center gap-3">
+              <div className="w-9 h-9 sm:w-8 sm:h-8 rounded-xl bg-mustard/20 text-forest-900 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5 sm:mt-0">
                 <i className="fa-solid fa-graduation-cap"></i>
               </div>
-              <div>
-                <p className="text-xs font-bold text-forest-900">
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-bold text-forest-900 leading-tight">
                   University of Computer Studies, Yangon
                 </p>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-[11px] text-slate-500 mt-0.5 leading-tight break-words">
                   Bachelor of Computer Science (B.C.Sc) • Dec 2013 – Aug 2019
                 </p>
               </div>
@@ -59,16 +59,19 @@ export default function Hero() {
         </Reveal>
 
         {/* Right Image Area */}
-        <Reveal delay={150} className="lg:col-span-5 relative flex justify-center">
-          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-mustard-light rounded-full -top-6 -right-4 sm:-right-6 z-0 opacity-90 shadow-inner animate-float-slow"></div>
+        <Reveal
+          delay={150}
+          className="lg:col-span-5 relative flex justify-center w-full"
+        >
+          <div className="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] bg-mustard-light rounded-full -top-6 right-1/2 translate-x-1/2 sm:translate-x-0 sm:-right-6 z-0 opacity-90 shadow-inner animate-float-slow"></div>
 
-          <div className="relative z-10 w-[280px] sm:w-[340px] h-[380px] sm:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-forest-800">
+          <div className="relative z-10 w-[260px] sm:w-[340px] h-[340px] sm:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-forest-800">
             <Image
               src="/images/profile.jpeg"
               alt="Kaung Khant Kyaw"
               fill
               priority
-              sizes="(max-width: 640px) 280px, 340px"
+              sizes="(max-width: 640px) 260px, 340px"
               className="object-cover object-top hover:scale-105 transition-transform duration-500"
             />
           </div>
