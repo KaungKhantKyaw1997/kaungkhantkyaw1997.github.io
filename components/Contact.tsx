@@ -1,6 +1,76 @@
+"use client";
+
+import { useState, useRef, FormEvent } from "react";
 import Reveal from "./Reveal";
 
+interface StatusModalState {
+  isOpen: boolean;
+  type: "success" | "error";
+  title: string;
+  message: string;
+}
+
 export default function Contact() {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [modal, setModal] = useState<StatusModalState>({
+    isOpen: false,
+    type: "success",
+    title: "",
+    message: "",
+  });
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setModal({
+          isOpen: true,
+          type: "success",
+          title: "Message Sent!",
+          message:
+            "Thank you for reaching out. I'll get back to you within one business day.",
+        });
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+      } else {
+        throw new Error(result.message || "Something went wrong.");
+      }
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again later.";
+      setModal({
+        isOpen: true,
+        type: "error",
+        title: "Oops!",
+        message: errorMessage,
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 relative">
       <Reveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
@@ -61,11 +131,7 @@ export default function Contact() {
 
         {/* Right Form Column */}
         <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-100">
-          <form
-            action="https://formspree.io/f/xrpbkrll"
-            method="POST"
-            className="space-y-4"
-          >
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-1.5">
                 <label className="text-[11px] font-bold text-forest-900 uppercase tracking-wider">
@@ -109,13 +175,55 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-mustard hover:bg-mustard-light text-forest-900 font-extrabold text-xs tracking-wide transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              disabled={loading}
+              className="w-full py-3 rounded-xl bg-mustard hover:bg-mustard-light text-forest-900 font-extrabold text-xs tracking-wide transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
-              Send Message <i className="fa-solid fa-paper-plane"></i>
+              {loading ? "Sending..." : "Send Message"}{" "}
+              <i className="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>
       </Reveal>
+
+      {/* Status Modal Popup */}
+      {modal.isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fadeIn">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 text-center space-y-5 animate-scaleUp">
+            <div
+              className={`w-14 h-14 mx-auto rounded-2xl flex items-center justify-center text-xl shadow-inner ${
+                modal.type === "success"
+                  ? "bg-mustard/20 text-forest-900"
+                  : "bg-red-100 text-red-600"
+              }`}
+            >
+              <i
+                className={`fa-solid ${
+                  modal.type === "success"
+                    ? "fa-circle-check"
+                    : "fa-circle-exclamation"
+                }`}
+              ></i>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-xl font-extrabold text-forest-900 tracking-tight">
+                {modal.title}
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                {modal.message}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setModal((prev) => ({ ...prev, isOpen: false }))}
+              className="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-extrabold text-xs tracking-wide transition-all shadow-md cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
