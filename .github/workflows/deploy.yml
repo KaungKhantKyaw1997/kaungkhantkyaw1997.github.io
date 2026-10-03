@@ -46,7 +46,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # --- ADDED ENVIRONMENT VARIABLES HERE ---
       - name: Build with Next.js
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: npx next build
 
       - name: Upload artifact for GitHub Pages
